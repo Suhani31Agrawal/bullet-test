@@ -15,7 +15,6 @@ function setup() {
 
 function draw() {
   background(255,255,255);  
-  drawSprites();
   
   bullet.velocityX=speed;
 
@@ -29,10 +28,11 @@ function draw() {
       wall.shapeColor=color(0,255,0);
     }
   }
+  drawSprites();
 }
 function hasCollided(bullet,wall){
   bulletRightEdge=bullet.x+bullet.width;
-  wall.LeftEdge=wall.x;
+  wallLeftEdge=wall.x;
   if(bulletRightEdge>=wallLeftEdge){
     return true
   }
